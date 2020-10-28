@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4d162bd0cf.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- axios link -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+      <div class="card-body">
+        <form  id="search-form">
+          <div class="row">
+            <div class="col-8">
+              <input type="search" placeholder="Enter a city" autofocus="on" autocomplete="off" 
+                class="form-control shadow-sm" id ="search-input"/>
+            </div>
+            <div class="col-2">
+              <input type="submit" value="Search"class="btn btn-outline-info" />  
+            </div>
+            <div class="col-2">
+              <button type="submit" class="btn btn-outline-info" id="current-location">
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+            </div>
+            
+          </div>
+        </form>
+          <br />
+          <h1 id="city"></h1>
+          <h2>Sunday September 27th, 2:45pm</h2>
+          <br />
+
+          <div class="row row-cols-2">
+            <div class="col">
+              <div class="current-icon">
+                <img src="images/partial-cloudy.png" width="150px" />
+              </div>
+              <ul class="current-weather">
+                <li><span id="description"></span></li> 
+                <li><span id="current-temp"></span></li>
+                <li><span id="units">
+                <a href="#" id="celsius">ºC</a> |
+                <a href="#" id="fahrenheit">ºF</a>
+                </span>
+                </li>
+              </ul>
+              
+            </div>
+            <div class="col">
+              <ul class="current-weather-desc">
+                <li>Feels Like: 31°</li>
+                <li>Low: 17°</li>
+                <li>Humidity:<span id="humidity">61</span>%</li>
+                <li>Wind: <span id="wind">29</span>/kmh S</li>
+                <li>Sunrise: 7:11 AM</li>
+                <li>Sunset: 7:01 PM</li>
+              </ul>
+            </div>
+          </div>
+
+          <hr />
+          <h3 id="future-forecast">6 Days forecast</h3>
+
+          <div class="row">
+            <div class="col-2">
+              <p id="future-days">Mon</p>
+              <img src="images/partial-cloudy.png" />
+              <p><span id="high">23°</span> 14°</p>
+            </div>
+            <div class="col-2">
+              <p id="future-days">Tue</p>
+              <img src="images/partial-cloudy.png" />
+              <p><span id="high">18°</span> 13°</p>
+            </div>
+            <div class="col-2">
+              <p id="future-days">Wed</p>
+              <img src="images/partial-cloudy.png" />
+              <p><span id="high">17°</span> 11°</p>
+            </div>
+            <div class="col-2">
+              <p id="future-days">Thurs</p>
+              <img src="images/light-rain (1).png" />
+              <p><span id="high">16°</span> 9°</p>
+            </div>
+            <div class="col-2">
+              <p id="future-days">Fri</p>
+              <img src="images/light-rain (1).png" />
+              <p><span id="high">14°</span> 7°</p>
+            </div>
+            <div class="col-2">
+              <p id="future-days">Sat</p>
+              <img src="images/light-rain (1).png" />
+              <p><span id="high">14°</span> 7°</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

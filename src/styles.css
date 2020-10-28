@@ -1,0 +1,80 @@
+h1,
+h2 {
+  font-family: "Merienda", cursive;
+  text-align: center;
+}
+h1 {
+  color: #ff006d;
+  font-size: 30px;
+}
+h2 {
+  color: #f78e2d;
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  text-align: left;
+  padding: 10px;
+}
+hr {
+  border: none;
+  border-top: 2px solid;
+  opacity: 25%;
+}
+
+.container {
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 700px;
+}
+.card-body {
+  border: 1px solid #a999e2;
+  padding: 30px;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+.current-icon {
+  text-align: center;
+  padding: 30px;
+}
+.current-weather {
+  font-family: "Merienda", cursive;
+  font-size: 20px;
+  color: #ff3466;
+  padding: 0px;
+  margin: 10px;
+  text-align: center;
+}
+
+.current-weather-desc {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: #757373;
+  padding: 30px;
+  margin: 20px;
+  text-align: left;
+}
+
+#future-forecast {
+  color: rgb(168, 106, 226);
+  text-align: center;
+}
+#future-days {
+  font-family: "Merienda", cursive;
+  font-size: 20px;
+  color: #ff7043;
+}
+#high {
+  color: #04d3b0;
+  font-weight: bold;
+}
+#current-temp {
+  padding: 30px;
+}
+#units {
+  color: rgb(26, 199, 199);
+}
