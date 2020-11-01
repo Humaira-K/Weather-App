@@ -47,12 +47,18 @@ response.data.main.humidity);
 document.querySelector("#wind").innerHTML = Math.round(
 response.data.wind.speed);
 document.querySelector("#description").innerHTML = response.data.weather[0].main;
+document.querySelector("#current-minimum").innerHTML = Math.round(
+response.data.temp_min);
+document.querySelector("#feels-like").innerHTML = Math.round(
+response.data.feels_like);
+console.log(response.data);
 }
 
 function searchCity(city) {
   let apiKey = "c4e8686879553a92040532234f03a66e";
   let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherCondition);
+ 
 }
 
 function handleSubmit(event) {
