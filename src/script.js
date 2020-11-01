@@ -3,8 +3,6 @@ let now = new Date();
 let date = now.getDate();
 let hours = now.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
-let year = now.getFullYear();
-
 let days = [
     "Sunday",
     "Monday",
@@ -33,28 +31,22 @@ let day = days[now.getDay()];
   ];
 
 let month = months[now.getMonth()];
+let year = now.getFullYear();
 
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${day} ${month} ${date}, ${year} ${hours}`;
 
-// h1 change based on text search
 
 function weatherCondition(response) {
  document.querySelector("#city").innerHTML = response.data.name;
 document.querySelector("#current-temp").innerHTML = Math.round(response.data.main.temp);
-document.querySelector("#humidity").innerHTML = Math.round(
-response.data.main.humidity);
-document.querySelector("#wind").innerHTML = Math.round(
-response.data.wind.speed);
+document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
+document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 document.querySelector("#description").innerHTML = response.data.weather[0].main;
-document.querySelector("#current-minimum").innerHTML = Math.round(
-response.data.main.temp_min);
-document.querySelector("#feels-like").innerHTML = Math.round(
-response.data.main.feels_like);
-document.querySelector("#sunrise").innerHTML = Math.round(
-response.data.sys.sunrise);
-document.querySelector("#sunset").innerHTML = Math.round(
-response.data.sys.sunset);
+document.querySelector("#current-minimum").innerHTML = Math.round(response.data.main.temp_min);
+document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
+document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
+document.querySelector("#sunset").innerHTML = response.data.sys.sunset * 1000;
 console.log(response.data);
 }
 
