@@ -48,9 +48,13 @@ document.querySelector("#wind").innerHTML = Math.round(
 response.data.wind.speed);
 document.querySelector("#description").innerHTML = response.data.weather[0].main;
 document.querySelector("#current-minimum").innerHTML = Math.round(
-response.data.temp_min);
+response.data.main.temp_min);
 document.querySelector("#feels-like").innerHTML = Math.round(
-response.data.feels_like);
+response.data.main.feels_like);
+document.querySelector("#sunrise").innerHTML = Math.round(
+response.data.sys.sunrise);
+document.querySelector("#sunset").innerHTML = Math.round(
+response.data.sys.sunset);
 console.log(response.data);
 }
 
