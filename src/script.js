@@ -38,15 +38,26 @@ h2.innerHTML = `${day} ${month} ${date}, ${year} ${hours}`;
 
 
 function weatherCondition(response) {
- document.querySelector("#city").innerHTML = response.data.name;
-document.querySelector("#current-temp").innerHTML = Math.round(response.data.main.temp);
-document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
-document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-document.querySelector("#description").innerHTML = response.data.weather[0].main;
-document.querySelector("#current-minimum").innerHTML = Math.round(response.data.main.temp_min);
-document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
-document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
-document.querySelector("#sunset").innerHTML = response.data.sys.sunset * 1000;
+let cityElement = document.querySelector("#city");
+let currentTemp = document.querySelector("#current-temp");
+let currentHumidity = document.querySelector("#humidity");
+let windSpeed = document.querySelector("#wind");
+let weatherDescription = document.querySelector("#description");
+let minimumTemp = document.querySelector("#current-minimum"); 
+let feelsLike = document.querySelector("#feels-like");
+let sunrise = document.querySelector("#sunrise");
+let sunset = document.querySelector("#sunset");
+
+cityElement.innerHTML = response.data.name;
+currentTemp.innerHTML = Math.round(response.data.main.temp);
+currentHumidity.innerHTML = Math.round(response.data.main.humidity);
+windSpeed.innerHTML = Math.round(response.data.wind.speed);
+weatherDescription.innerHTML = response.data.weather[0].main;
+minimumTemp.innerHTML = Math.round(response.data.main.temp_min);
+feelsLike.innerHTML = Math.round(response.data.main.feels_like);
+sunrise.innerHTML = response.data.sys.sunrise;
+sunset.innerHTML = response.data.sys.sunset * 1000;
+
 console.log(response.data);
 }
 
