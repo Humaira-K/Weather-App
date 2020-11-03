@@ -13,8 +13,6 @@ h2 {
 }
 
 ul {
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
@@ -49,7 +47,7 @@ hr {
 
 .current-weather-desc {
   font-family: "Merienda", cursive;
-  font-size: 20px;
+  font-size: 19px;
   color: #757373;
   padding: 30px;
   margin: 20px;
@@ -72,7 +70,7 @@ hr {
   font-weight: bold;
 }
 #current-temp {
-  padding: 30px;
+  padding: 15px;
 }
 
 #git-hub-link {

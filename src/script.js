@@ -48,8 +48,10 @@ let feelsLike = document.querySelector("#feels-like");
 let sunrise = document.querySelector("#sunrise");
 let sunset = document.querySelector("#sunset");
 
+celsiusTemperature = response.data.main.temp;
+
 cityElement.innerHTML = response.data.name;
-currentTemp.innerHTML = Math.round(response.data.main.temp);
+currentTemp.innerHTML = Math.round(celsiusTemperature);
 currentHumidity.innerHTML = Math.round(response.data.main.humidity);
 windSpeed.innerHTML = Math.round(response.data.wind.speed);
 weatherDescription.innerHTML = response.data.weather[0].main;
@@ -65,7 +67,6 @@ function searchCity(city) {
   let apiKey = "c4e8686879553a92040532234f03a66e";
   let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherCondition);
- 
 }
 
 function handleSubmit(event) {
@@ -86,30 +87,39 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
-
 }
 
-function clickFarenheit(event) {
+function clickFahrenheit(event) {
   event.preventDefault();
-  let farenheitTemperature = document.querySelector("#current-temp");
-  farenheitTemperature.innerHTML = Math.round(22 * 9 + 32);
-}
+ 
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 
-let farenheitLink = document.querySelector("#fahrenheit");
-farenheitLink.addEventListener("click", clickFarenheit);
+  let temperatureElement = document.querySelector("#current-temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 
 function clickCelsius(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#current-temp");
-  temperature.innerHTML = 22;
+ 
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", clickCelsius);
-
+let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", clickFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", clickCelsius);
 
 let currentLocationButton= document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
