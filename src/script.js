@@ -91,12 +91,12 @@ function getCurrentLocation(event) {
 
 function clickFarenheit(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#current-temp");
-  temperature.innerHTML = Math.round(22 * 1.8 + 32);
+  let farenheitTemperature = document.querySelector("#current-temp");
+  farenheitTemperature.innerHTML = Math.round(22 * 9 + 32);
 }
 
-let clickInputFarenheit = document.querySelector("#fahrenheit");
-clickInputFarenheit.addEventListener("click", clickFarenheit);
+let farenheitLink = document.querySelector("#fahrenheit");
+farenheitLink.addEventListener("click", clickFarenheit);
 
 function clickCelsius(event) {
   event.preventDefault();
@@ -104,8 +104,8 @@ function clickCelsius(event) {
   temperature.innerHTML = 22;
 }
 
-let clickInputCelsius = document.querySelector("#celsius");
-clickInputCelsius.addEventListener("click", clickCelsius);
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", clickCelsius);
 
 
 let searchForm = document.querySelector("#search-form");

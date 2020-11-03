@@ -18,10 +18,6 @@ ul {
   list-style: none;
 }
 
-p {
-  text-align: left;
-  padding: 10px;
-}
 hr {
   border: none;
   border-top: 2px solid;
@@ -42,19 +38,17 @@ hr {
 }
 .icon {
   text-align: center;
-  padding: 30px;
+  padding: 20px;
 }
 .current-weather {
   font-family: "Merienda", cursive;
   font-size: 20px;
   color: #ff3466;
-  padding: 0px;
-  margin: 10px;
   text-align: center;
 }
 
 .current-weather-desc {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Merienda", cursive;
   font-size: 20px;
   color: #757373;
   padding: 30px;
@@ -70,6 +64,8 @@ hr {
   font-family: "Merienda", cursive;
   font-size: 20px;
   color: #ff7043;
+  text-align: left;
+  padding: 10px;
 }
 #high {
   color: #04d3b0;
@@ -78,6 +74,7 @@ hr {
 #current-temp {
   padding: 30px;
 }
-#units {
-  color: rgb(26, 199, 199);
+
+#git-hub-link {
+  text-align: center;
 }
