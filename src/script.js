@@ -49,6 +49,7 @@ let feelsLike = document.querySelector("#feels-like");
 let sunrise = document.querySelector("#sunrise");
 let sunset = document.querySelector("#sunset");
 let pressure = document.querySelector("#weather-pressure");
+let iconElement = document.querySelector("#icon");
 
 celsiusTemperature = response.data.main.temp;
 
@@ -63,7 +64,8 @@ feelsLike.innerHTML = Math.round(response.data.main.feels_like);
 sunrise.innerHTML = response.data.sys.sunrise;
 sunset.innerHTML = response.data.sys.sunset * 1000;
 pressure.innerHTML = Math.round(response.data.main.pressure);
-
+iconElement.setAttribute("alt", response.data.weather[0].description);
+iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
 console.log(response.data);
 }
