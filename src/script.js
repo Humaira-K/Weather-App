@@ -44,9 +44,11 @@ let currentHumidity = document.querySelector("#humidity");
 let windSpeed = document.querySelector("#wind");
 let weatherDescription = document.querySelector("#description");
 let minimumTemp = document.querySelector("#current-minimum"); 
+let maximumTemp = document.querySelector("#current-maximum"); 
 let feelsLike = document.querySelector("#feels-like");
 let sunrise = document.querySelector("#sunrise");
 let sunset = document.querySelector("#sunset");
+let pressure = document.querySelector("#weather-pressure");
 
 celsiusTemperature = response.data.main.temp;
 
@@ -56,9 +58,12 @@ currentHumidity.innerHTML = Math.round(response.data.main.humidity);
 windSpeed.innerHTML = Math.round(response.data.wind.speed);
 weatherDescription.innerHTML = response.data.weather[0].main;
 minimumTemp.innerHTML = Math.round(response.data.main.temp_min);
+maximumTemp.innerHTML = Math.round(response.data.main.temp_max);
 feelsLike.innerHTML = Math.round(response.data.main.feels_like);
 sunrise.innerHTML = response.data.sys.sunrise;
 sunset.innerHTML = response.data.sys.sunset * 1000;
+pressure.innerHTML = Math.round(response.data.main.pressure);
+
 
 console.log(response.data);
 }
