@@ -1,5 +1,7 @@
 function formatDate(timestamp) {
 let date = new Date(timestamp);
+let year = date.getFullYear();
+
 let days = [
     "Sunday",
     "Monday",
@@ -28,8 +30,7 @@ let day = days[date.getDay()];
   
 let month = months[date.getMonth()];
 
-
-  return `${day} ${month} ${date},${formatTime(timestamp)}`;
+  return `${day} ${month}, ${year} ${date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;
 }
 
 function formatTime(timestamp) {
