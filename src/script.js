@@ -1,8 +1,14 @@
-let now = new Date();
-
-let date = now.getDate();
-let hours = now.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-
+function formatDate(timestamp) {
+let date = new Date(timestamp);
+let year = date.getFullYear();
+let hours = date.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+let minutes = date.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let days = [
     "Sunday",
     "Monday",
@@ -12,10 +18,9 @@ let days = [
     "Friday",
     "Saturday"
   ];
+let day = days[date.getDay()];
 
-let day = days[now.getDay()];
-
-  let months = [
+ let months = [
     "January",
     "February",
     "March",
@@ -29,13 +34,25 @@ let day = days[now.getDay()];
     "November",
     "December"
   ];
+  
+let month = months[date.getMonth()];
 
-let month = months[now.getMonth()];
-let year = now.getFullYear();
 
-let h2 = document.querySelector("h2");
-h2.innerHTML = `${day} ${month} ${date}, ${year} ${hours}`;
+  return `${day} ${month} ${date}, ${year} ${hours}:${minutes}`;
+}
 
+function sunriseSunset(timestamp) {
+let date = new Date(timestamp);
+let hours = date.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+let minutes = date.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+return `${hours}:${minutes}`;
+}
 
 function weatherCondition(response) {
 let cityElement = document.querySelector("#city");
@@ -50,6 +67,10 @@ let sunrise = document.querySelector("#sunrise");
 let sunset = document.querySelector("#sunset");
 let pressure = document.querySelector("#weather-pressure");
 let iconElement = document.querySelector("#icon");
+// date element
+let dateElement = document.querySelector("#date-time");
+
+dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
 celsiusTemperature = response.data.main.temp;
 
@@ -61,8 +82,8 @@ weatherDescription.innerHTML = response.data.weather[0].main;
 minimumTemp.innerHTML = Math.round(response.data.main.temp_min);
 maximumTemp.innerHTML = Math.round(response.data.main.temp_max);
 feelsLike.innerHTML = Math.round(response.data.main.feels_like);
-sunrise.innerHTML = response.data.sys.sunrise;
-sunset.innerHTML = response.data.sys.sunset * 1000;
+sunrise.innerHTML = sunriseSunset(response.data.sys.sunrise * 1000);
+sunset.innerHTML = sunriseSunset(response.data.sys.sunset * 1000);
 pressure.innerHTML = Math.round(response.data.main.pressure);
 iconElement.setAttribute("alt", response.data.weather[0].description);
 iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
