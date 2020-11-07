@@ -1,14 +1,5 @@
 function formatDate(timestamp) {
 let date = new Date(timestamp);
-let year = date.getFullYear();
-let hours = date.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = date.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
 let days = [
     "Sunday",
     "Monday",
@@ -38,10 +29,10 @@ let day = days[date.getDay()];
 let month = months[date.getMonth()];
 
 
-  return `${day} ${month} ${date}, ${year} ${hours}:${minutes}`;
+  return `${day} ${month} ${date},${formatTime(timestamp)}`;
 }
 
-function sunriseSunset(timestamp) {
+function formatTime(timestamp) {
 let date = new Date(timestamp);
 let hours = date.getHours();
 if (hours < 10) {
@@ -82,8 +73,8 @@ weatherDescription.innerHTML = response.data.weather[0].main;
 minimumTemp.innerHTML = Math.round(response.data.main.temp_min);
 maximumTemp.innerHTML = Math.round(response.data.main.temp_max);
 feelsLike.innerHTML = Math.round(response.data.main.feels_like);
-sunrise.innerHTML = sunriseSunset(response.data.sys.sunrise * 1000);
-sunset.innerHTML = sunriseSunset(response.data.sys.sunset * 1000);
+sunrise.innerHTML = formatTime(response.data.sys.sunrise * 1000);
+sunset.innerHTML = formatTime(response.data.sys.sunset * 1000);
 pressure.innerHTML = Math.round(response.data.main.pressure);
 iconElement.setAttribute("alt", response.data.weather[0].description);
 iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);

@@ -1,5 +1,5 @@
 body {
-  font-family: "Architects Daughter", cursive;
+  font-family: "Lato", sans-serif;
   color: #ffffff;
 }
 h1,
@@ -8,6 +8,7 @@ h2 {
 }
 h1 {
   font-size: 30px;
+  margin-top: 30px;
 }
 h2 {
   font-size: 20px;
@@ -54,8 +55,8 @@ hr {
 }
 
 .todaysWeather #description {
+  font-size: 30px;
   color: #fadcaa;
-  padding: 10px;
 }
 
 .todaysWeather #current-temp {
@@ -70,13 +71,14 @@ hr {
   font-size: 15px;
   top: -15px;
 }
+
 #future-forecast {
   color: #fadcaa;
   text-align: center;
 }
 #future-days {
   font-size: 20px;
-  color: #ff7043;
+
   text-align: left;
   padding: 10px;
 }
