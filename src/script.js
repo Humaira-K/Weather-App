@@ -30,20 +30,12 @@ let day = days[date.getDay()];
   
 let month = months[date.getMonth()];
 
-  return `${day} ${month}, ${year} ${date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;
+  return `${day} ${month}, ${year} ${formatTime(timestamp)}`;
 }
 
 function formatTime(timestamp) {
 let date = new Date(timestamp);
-let hours = date.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = date.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-return `${hours}:${minutes}`;
+return `${date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;
 }
 
 function weatherCondition(response) {
