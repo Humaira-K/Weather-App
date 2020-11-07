@@ -53,7 +53,7 @@ let iconElement = document.querySelector("#icon");
 
 celsiusTemperature = response.data.main.temp;
 
-cityElement.innerHTML = response.data.name;
+cityElement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 currentTemp.innerHTML = Math.round(celsiusTemperature);
 currentHumidity.innerHTML = Math.round(response.data.main.humidity);
 windSpeed.innerHTML = Math.round(response.data.wind.speed);
