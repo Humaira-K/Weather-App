@@ -2,17 +2,6 @@ function formatDate(timestamp) {
 let date = new Date(timestamp);
 let year = date.getFullYear();
 
-let days = [
-    "Sunday",
-    "Monday",
-    "Tueday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ];
-let day = days[date.getDay()];
-
  let months = [
     "January",
     "February",
@@ -30,13 +19,54 @@ let day = days[date.getDay()];
   
 let month = months[date.getMonth()];
 
-  return `${day} ${month}, ${year} ${formatTime(timestamp)}`;
+  return `${formatDay(timestamp)} ${month}, ${year} ${formatTime(timestamp)}`;
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp);
+  
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tueday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+let day = days[date.getDay()];
+return `${day}`;
 }
 
 function formatTime(timestamp) {
 let date = new Date(timestamp);
 return `${date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;
 }
+
+
+function dispalyForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+ let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];  
+    forecastElement.innerHTML +=`<div class="col-2">
+            <h4 id="future-days">${formatTime(forecast.dt * 1000)}</h4>
+            <img src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      />
+        <h4><strong id="high">
+          ${Math.round(forecast.main.temp_max)}°C
+           </strong>
+          ${Math.round(forecast.main.temp_min)}°C
+         </h4>
+          </div>
+          `;
+  }
+}
+
 
 function weatherCondition(response) {
 let cityElement = document.querySelector("#city");
@@ -51,7 +81,7 @@ let sunrise = document.querySelector("#sunrise");
 let sunset = document.querySelector("#sunset");
 let pressure = document.querySelector("#weather-pressure");
 let iconElement = document.querySelector("#icon");
-// date element
+
 let dateElement = document.querySelector("#date-time");
 
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -79,6 +109,9 @@ function searchCity(city) {
   let apiKey = "c4e8686879553a92040532234f03a66e";
   let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherCondition);
+
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(dispalyForecast);
 }
 
 function handleSubmit(event) {

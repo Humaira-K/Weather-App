@@ -15,7 +15,9 @@ h1 {
 h2 {
   font-size: 20px;
 }
-
+h4 {
+  font-size: 17px;
+}
 ul {
   list-style: none;
 }
@@ -76,18 +78,14 @@ hr {
 }
 
 #future-forecast {
+  font-size: 25px;
   color: #fadcaa;
   text-align: center;
+  margin-bottom: 20px;
 }
-#future-days {
-  font-size: 20px;
 
-  text-align: left;
-  padding: 10px;
-}
 #high {
   color: #04d3b0;
-  font-weight: bold;
 }
 #current-temp {
   padding: 15px;
