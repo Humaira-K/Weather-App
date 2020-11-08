@@ -83,6 +83,7 @@ let sunset = document.querySelector("#sunset");
 let pressure = document.querySelector("#weather-pressure");
 let iconElement = document.querySelector("#icon");
 
+
 let dateElement = document.querySelector("#date-time");
 
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
