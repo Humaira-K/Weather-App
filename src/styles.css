@@ -16,10 +16,9 @@ time {
 }
 h4 {
   font-size: 17px;
+  text-align: right;
 }
-ul {
-  list-style: none;
-}
+
 a {
   color: #9ab3f5;
 }
@@ -29,6 +28,9 @@ hr {
   opacity: 25%;
 }
 
+strong {
+  color: #04d3b0;
+}
 .card {
   padding: 15px;
   margin: 20px auto;
@@ -54,10 +56,14 @@ hr {
 
 .todaysWeather {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 5px 0px 20px 0px;
 }
 
+.todaysWeather #icon {
+  margin-top: -10px;
+}
 .todaysWeather #description {
+  text-align: center;
   font-size: 30px;
   color: #fadcaa;
 }
@@ -76,18 +82,24 @@ hr {
   top: -18px;
 }
 
-#future-forecast {
+#weather-details {
+  font-size: 20px;
+  margin-left: 75px;
+}
+
+#forecast {
   font-size: 25px;
   color: #fadcaa;
   text-align: center;
   margin-bottom: 20px;
 }
-
-#high {
-  color: #04d3b0;
+#future-forecast #hours {
+  font-size: 17px;
+  text-align: right;
 }
-#current-temp {
-  padding: 15px;
+#future-forecast #temperature {
+  font-size: 20px;
+  text-align: center;
 }
 
 #github-linkedin-link {

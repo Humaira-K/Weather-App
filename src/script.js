@@ -19,7 +19,7 @@ let year = date.getFullYear();
   
 let month = months[date.getMonth()];
 
-  return `${formatDay(timestamp)} ${month}, ${year} ${formatTime(timestamp)}`;
+  return `${formatDay(timestamp)} ${month} ${date.getDate()}, ${year} ${formatTime(timestamp)}`;
 }
 
 function formatDay(timestamp) {
@@ -45,19 +45,20 @@ return `${date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hou
 
 
 function dispalyForecast(response) {
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector("#future-forecast");
   forecastElement.innerHTML = null;
  let forecast = null;
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];  
-    forecastElement.innerHTML +=`<div class="col-2">
-            <h4 id="future-days">${formatTime(forecast.dt * 1000)}</h4>
+    forecastElement.innerHTML +=`<div class="col-2"  >
+            <h4 id="hours">${formatTime(forecast.dt * 1000)}</h4>
             <img src="http://openweathermap.org/img/wn/${
           forecast.weather[0].icon
         }@2x.png"
+       
       />
-        <h4><strong id="high">
+        <h4 id="temperature"><strong>
           ${Math.round(forecast.main.temp_max)}°C
            </strong>
           ${Math.round(forecast.main.temp_min)}°C
