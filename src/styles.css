@@ -7,8 +7,10 @@ h2 {
   text-align: center;
 }
 h1 {
+  font-weight: bold;
   font-size: 30px;
   margin-top: 30px;
+  margin-bottom: 15px;
 }
 h2 {
   font-size: 20px;
@@ -30,7 +32,7 @@ hr {
   padding: 15px;
   margin: 20px auto;
   border-radius: 15px;
-  box-shadow: 14px 28px 89px -8px rgba(153, 124, 153, 0.63);
+  box-shadow: 14px 28px 89px -8px rgba(172, 146, 172, 0.63);
   max-width: 700px;
   background-image: linear-gradient(
     to right,
@@ -69,6 +71,7 @@ hr {
   font-weight: bold;
   position: relative;
   font-size: 15px;
+  padding: 5px;
   top: -18px;
 }
 
@@ -91,6 +94,8 @@ hr {
 }
 
 #github-linkedin-link {
+  font-weight: bold;
+  font-size: 20px;
   text-align: center;
   color: #cc3dd1;
 }
