@@ -51,7 +51,7 @@ function dispalyForecast(response) {
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];  
-    forecastElement.innerHTML +=`<div class="col-2" id="forecast-element" >
+    forecastElement.innerHTML += `<div class="col-6 col-md-2 text-center mb-4" id="forecast-element" >
             <h4 id="hours">${formatTime(forecast.dt * 1000)}</h4>
             <img src="http://openweathermap.org/img/wn/${
           forecast.weather[0].icon

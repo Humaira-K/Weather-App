@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+​
 
 <head>
   <meta charset="UTF-8" />
@@ -13,6 +14,7 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <title>Weather App</title>
 </head>
+​
 
 <body>
   <div class="container">
@@ -20,14 +22,14 @@
       <div class="card-body">
         <form id="search-form">
           <div class="row">
-            <div class="col-8">
+            <div class="col-12 col-md-8 mb-2 mb-md-0">
               <input type="text" placeholder="Enter a city..." autofocus="on" autocomplete="off"
                 class="form-control shadow-sm" id="search-input" />
             </div>
-            <div class="col-2">
-              <input type="submit" value="Search" class="btn btn-outline-dark"/>
+            <div class="col-4 col-md-2">
+              <input type="submit" value="Search" class="btn btn-outline-dark" />
             </div>
-            <div class="col-2">
+            <div class="col-4 col-md-2">
               <button type="submit" class="btn btn-outline-dark" id="current-location">📍</i>
               </button>
             </div>
@@ -35,42 +37,44 @@
         </form>
         <br />
         <hgroup>
-        <h1 id="city">Toronto</h1>
-        <time id="date-time"></time>
+          <h1 id="city">Toronto</h1>
+          <time id="date-time"></time>
         </hgroup>
         <br />
-           <section class="todaysWeather">
-             <img src="" alt="sunny" width="250px" id="icon"/>
-              <h4 id="description"></h4>
-              <span id="current-temp"></span><span id="units"><a href="#" id="celsius">ºC</a> | <a href="#" id="fahrenheit">ºF</a></span>
-           </section>
-     <br />
+        <section class="todaysWeather">
+          <img src="" alt="sunny" width="250px" id="icon" />
+          <h4 id="description"></h4>
+          <span id="current-temp"></span><span id="units"><a href="#" id="celsius">ºC</a> | <a href="#"
+              id="fahrenheit">ºF</a></span>
+        </section>
+        <br />
         <div class="row" id="weather-details">
-        <div class="col-6">Feels Like: <span id="feels-like"></span>°C</div>
-        <div class="col-6">Pressure: <span id="weather-pressure"></span> hPa</div>
-        <div class="col-6">High: <span id="current-maximum"></span>°C</div>
-        <div class="col-6">Humidity: <span id="humidity"></span>%</div>
-        <div class="col-6">Low: <span id="current-minimum"></span>°C</div>
-        <div class="col-6">Wind: <span id="wind">29</span>/KmH</div>
-        <div class="col-6">Sunset: <span id="sunset"></span></div>
-        <div class="col-6">Sunrise: <span id="sunrise"></span></div>
+          <div class="col-6">Feels Like: <span id="feels-like"></span>°C</div>
+          <div class="col-6">Pressure: <span id="weather-pressure"></span> hPa</div>
+          <div class="col-6">High: <span id="current-maximum"></span>°C</div>
+          <div class="col-6">Humidity: <span id="humidity"></span>%</div>
+          <div class="col-6">Low: <span id="current-minimum"></span>°C</div>
+          <div class="col-6">Wind: <span id="wind">29</span>/KmH</div>
+          <div class="col-6">Sunset: <span id="sunset"></span></div>
+          <div class="col-6">Sunrise: <span id="sunrise"></span></div>
         </div>
-
+        ​
         <hr />
         <section id="forecast">16 Hours Forecast</section>
-
+        ​
         <article class="row weather-forecast" id="future-forecast">
-       
+
         </article>
       </div>
     </div>
     <footer id="github-linkedin-link">
-      <p><a href="https://github.com/Humaira-K/Weather-App" target="_blank">Open-Source Code</a> by <a href="https://www.linkedin.com/in/humairakhan/" 
-      target="_blank">Humaira Khan</a>
+      <p><a href="https://github.com/Humaira-K/Weather-App" target="_blank">Open-Source Code</a> by <a
+          href="https://www.linkedin.com/in/humairakhan/" target="_blank">Humaira Khan</a>
       </p>
     </footer>
   </div>
   <script src="src/script.js"></script>
 </body>
+​
 
 </html>

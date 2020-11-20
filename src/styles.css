@@ -117,7 +117,7 @@ strong {
   text-align: center;
 }
 #future-forecast #temperature {
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
 }
 
@@ -126,4 +126,10 @@ strong {
   font-size: 20px;
   text-align: center;
   color: #cc3dd1;
+}
+
+​ @media (min-width: 768px) {
+  #weather-details {
+    margin: -5px 0px 15px 70px;
+  }
 }
