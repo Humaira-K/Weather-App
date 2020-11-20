@@ -68,6 +68,7 @@ strong {
 }
 
 .todaysWeather #icon {
+  width: 250px;
   margin: -15px 0px 5px 0px;
 }
 .todaysWeather #description {
@@ -79,7 +80,7 @@ strong {
 
 .todaysWeather #current-temp {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 45px;
   padding: 0;
   margin: 10px 0px 0px 25px;
 }
@@ -93,9 +94,12 @@ strong {
   top: -18px;
 }
 
+#search-input {
+  font-size: 20px;
+}
 #weather-details {
   color: #214252;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
   margin: -5px 0px 15px 70px;
 }
